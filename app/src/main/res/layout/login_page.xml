@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/login_header"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo"
+        android:contentDescription="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#2e8acc"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/login_header"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="DD MMM YYYY"
+            android:textColor="#FFF"
+            android:textSize="36sp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="100dp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txt_login_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText3"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="sans-serif"
+            android:padding="10sp"
+            android:text="Welcome"
+            android:textColor="#ffffff"
+            android:textSize="28sp" />
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#1C75BC"
+            android:fontFamily="sans-serif"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:layout_below="@+id/editText3"
+            android:layout_alignStart="@+id/editText3"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
