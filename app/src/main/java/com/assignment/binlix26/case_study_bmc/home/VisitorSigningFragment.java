@@ -29,6 +29,7 @@ public class VisitorSigningFragment extends Fragment implements LoaderManager.Lo
     EditText visitorNumberInput;
     Button visitorNumberSearchButton;
 
+    private boolean firstTimeLoad = true;
     private String inputMobile;
 
     @Nullable
@@ -66,8 +67,13 @@ public class VisitorSigningFragment extends Fragment implements LoaderManager.Lo
             return;
         }
 
-        // load search cell phone number
-        getLoaderManager().initLoader(1, null, this);
+        if (firstTimeLoad) {
+            // load search cell phone number
+            getLoaderManager().initLoader(1, null, this);
+            firstTimeLoad = false;
+        } else {
+            getLoaderManager().restartLoader(1, null, this);
+        }
 
     }
 
