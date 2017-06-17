@@ -13,6 +13,7 @@ import java.util.List;
 public class Utility {
 
     public static List<String> purposeList = Arrays.asList("General Business", "Drop In", "Scheduled Appointment", "Other");
+    public static List<String> visitorListFilter = Arrays.asList("All", "Check In", "Check Out");
 
     public static String getCurrentTimeAsString(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

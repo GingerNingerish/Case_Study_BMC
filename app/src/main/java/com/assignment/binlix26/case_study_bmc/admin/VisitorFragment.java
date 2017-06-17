@@ -12,17 +12,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.assignment.binlix26.case_study_bmc.R;
+import com.assignment.binlix26.case_study_bmc.data.BMCContract;
 import com.assignment.binlix26.case_study_bmc.data.BMCContract.VisitorEntry;
 import com.assignment.binlix26.case_study_bmc.home.VisitorCheckInActivity;
 import com.assignment.binlix26.case_study_bmc.model.Visitor;
 
+import static com.assignment.binlix26.case_study_bmc.utility.Utility.visitorListFilter;
+
 public class VisitorFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    private static final int CHECK_IN_LOADER = 101;
+    private static final int ALL_LOADER = 101;
+    private static final int CHECK_IN_LOADER = 102;
+    private static final int CHECK_OUT_LOADER = 103;
 
+    private Spinner listFilter;
     ListView listView;
     Cursor cursor;
     VisitorCursorAdapter adapter;
@@ -41,7 +49,7 @@ public class VisitorFragment extends Fragment implements LoaderManager.LoaderCal
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getLoaderManager().initLoader(CHECK_IN_LOADER, null, this);
+        getLoaderManager().initLoader(ALL_LOADER, null, this);
     }
 
     @Override
@@ -84,20 +92,85 @@ public class VisitorFragment extends Fragment implements LoaderManager.LoaderCal
             }
         });
 
+        listFilter = (Spinner) view.findViewById(R.id.checkin_list_filter);
+
+        ArrayAdapter<String> filterAdapter = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item, visitorListFilter);
+        filterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        listFilter.setAdapter(filterAdapter);
+
+        listFilter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                getLoader(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+    }
+
+    private void getLoader(int position) {
+        switch (position) {
+            case 0:
+                getLoaderManager().initLoader(ALL_LOADER, null, this);
+                break;
+            case 1:
+                getLoaderManager().initLoader(CHECK_IN_LOADER, null, this);
+                break;
+            case 2:
+                getLoaderManager().initLoader(CHECK_OUT_LOADER, null, this);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        // TODO: 13/06/17 filer result at here for future needs
+        String selection;
+        String[] selectionArgs;
+        switch (id) {
+            case ALL_LOADER:
+                // Construct the loader
+                Loader<Cursor> allCursor = new CursorLoader(
+                        getActivity(),
+                        VisitorEntry.CONTENT_URI,
+                        null, null, null, null
+                );
 
-        // Construct the loader
-        Loader<Cursor> cursorLoader = new CursorLoader(
-                getActivity(),
-                VisitorEntry.CONTENT_URI,
-                null, null, null, null
-        );
+                return allCursor;
+            case CHECK_IN_LOADER:
+                selection = VisitorEntry.COLUMN_STATUS + "=?";
+                selectionArgs = new String[]{String.valueOf(BMCContract.CHECKIN)};
 
-        return cursorLoader;
+                // Construct the loader
+                Loader<Cursor> checkInCursor = new CursorLoader(
+                        getActivity(),
+                        VisitorEntry.CONTENT_URI,
+                        null, selection, selectionArgs, null
+                );
+
+                return checkInCursor;
+            case CHECK_OUT_LOADER:
+                selection = VisitorEntry.COLUMN_STATUS + "=?";
+                selectionArgs = new String[]{String.valueOf(BMCContract.CHECKOUT)};
+
+                // Construct the loader
+                Loader<Cursor> checkOutCursor = new CursorLoader(
+                        getActivity(),
+                        VisitorEntry.CONTENT_URI,
+                        null, selection, selectionArgs, null
+                );
+
+                return checkOutCursor;
+            default:
+                return null;
+        }
+
     }
 
     @Override
