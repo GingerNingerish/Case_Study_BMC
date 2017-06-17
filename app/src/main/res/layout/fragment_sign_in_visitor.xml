@@ -16,7 +16,7 @@
         android:layout_marginTop="25dp"
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
-        android:inputType="text"
+        android:inputType="phone"
         android:maxLength="12"
         android:padding="10sp"
         android:textAlignment="center"

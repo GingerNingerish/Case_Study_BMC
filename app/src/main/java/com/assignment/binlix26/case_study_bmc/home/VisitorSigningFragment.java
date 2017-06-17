@@ -1,5 +1,6 @@
 package com.assignment.binlix26.case_study_bmc.home;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -115,14 +116,26 @@ public class VisitorSigningFragment extends Fragment implements LoaderManager.Lo
 
             startActivity(intent);
         } else {
-            Visitor visitor = new Visitor();
-            visitor.setPhone(inputMobile);
+            new AlertDialog.Builder(getContext())
+                    .setTitle("Sign Up Confirmation")
+                    .setMessage("Your Number does not exist, Do you want to Sign Up?")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
-            Intent intent = new Intent(getContext(), VisitorCheckInActivity.class);
-            intent.putExtra("visitor", visitor);
-            intent.putExtra("exist", false);
+                        public void onClick(DialogInterface dialog, int whichButton) {
 
-            startActivity(intent);
+                            Visitor visitor = new Visitor();
+                            visitor.setPhone(inputMobile);
+
+                            Intent intent = new Intent(getActivity(), VisitorCheckInActivity.class);
+                            intent.putExtra("visitor", visitor);
+                            intent.putExtra("exist", false);
+
+                            startActivity(intent);
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, null).show();
+
         }
     }
 

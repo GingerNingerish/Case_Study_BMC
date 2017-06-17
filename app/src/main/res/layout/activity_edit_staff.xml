@@ -10,31 +10,31 @@
         android:id="@+id/edit_staff_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/edit_staff_photo"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/edit_staff_photo"
         android:layout_marginTop="40dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <EditText
             android:id="@+id/edit_staff_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_marginBottom="20dp"
-            android:inputType="textPersonName"
-            android:hint="Name" />
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/edit_staff_title"
@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Name" />
+            android:hint="Title"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/edit_staff_department"
@@ -51,8 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Name" />
+            android:hint="department"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/edit_staff_phone"
@@ -60,17 +60,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="12"
-            android:inputType="phone"
-            android:hint="Name" />
+            android:hint="Phone"
+            android:inputType="phone" />
     </LinearLayout>
 
     <Button
         android:id="@+id/edit_staff_bt_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="43dp"
-        android:text="Update"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"
+        android:text="Update" />
 
 </RelativeLayout>

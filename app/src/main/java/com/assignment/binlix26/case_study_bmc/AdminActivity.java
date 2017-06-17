@@ -1,5 +1,9 @@
 package com.assignment.binlix26.case_study_bmc;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -7,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.assignment.binlix26.case_study_bmc.admin.EditStaffActivity;
+import com.assignment.binlix26.case_study_bmc.admin.EditVisitorActivity;
 
 public class AdminActivity extends AppCompatActivity {
 
@@ -45,12 +52,26 @@ public class AdminActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.new_visitor:
+                // go to edit visitor
+                Intent addVisitor = new Intent(this, EditVisitorActivity.class);
+                startActivity(addVisitor);
+                return true;
+            case R.id.new_staff:
+                // go to edit staff
+                Intent addStaff = new Intent(this, EditStaffActivity.class);
+                addStaff.putExtra("exist", false);
+                startActivity(addStaff);
+                return true;
+            case R.id.new_app:
+                // go to edit appointment
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
-        return super.onOptionsItemSelected(item);
     }
 
 }

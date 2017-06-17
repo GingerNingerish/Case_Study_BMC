@@ -47,16 +47,41 @@
             <!--android:hint="Person meet with"-->
             <!--android:inputType="textPersonName" />-->
 
-        <EditText
-            android:id="@+id/sign_in_visitor_purpose"
+        <!--<EditText-->
+            <!--android:id="@+id/sign_in_visitor_purpose"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="30dp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:ems="10"-->
+            <!--android:hint="Purpose"-->
+            <!--android:inputType="textPersonName" />-->
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:ems="10"
-            android:hint="Purpose"
-            android:inputType="textPersonName" />
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Purpose"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/sign_in_purpose_spi"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+
+
 
         <EditText
             android:id="@+id/sign_in_visitor_phone"

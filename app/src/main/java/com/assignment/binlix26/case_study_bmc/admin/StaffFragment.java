@@ -68,15 +68,16 @@ public class StaffFragment extends Fragment implements LoaderManager.LoaderCallb
                 String staffName = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_NAME));
                 String staffPhone = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_PHONE));
                 String staffTittle = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_TITLE));
-                String staffDepar = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_DEPARTMENT));
+                String staffDepartment = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_DEPARTMENT));
                 String staffPhoto = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_PHOTO));
 
                 Staff staff = new Staff(staffId, staffName,
-                        staffTittle, staffDepar, staffPhone, staffPhoto);
+                        staffTittle, staffDepartment, staffPhone, staffPhoto);
 
                 Intent editStaff = new Intent(getActivity(), EditStaffActivity.class);
 
                 editStaff.putExtra("staff", staff);
+                editStaff.putExtra("exist", true);
                 startActivity(editStaff);
             }
         });

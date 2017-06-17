@@ -9,7 +9,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Case_Study_BMC"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -35,7 +35,8 @@
 
         <activity android:name=".home.VisitorCheckInActivity" />
         <activity android:name=".admin.EditStaffActivity" />
-        <activity android:name=".admin.EditAppointmentActivity"></activity>
+        <activity android:name=".admin.EditAppointmentActivity" />
+        <activity android:name=".admin.EditVisitorActivity"></activity>
     </application>
 
 </manifest>

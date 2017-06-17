@@ -34,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     VisitorEntry.COLUMN_BUSINESS_NAME + " TEXT, " +
                     VisitorEntry.COLUMN_PURPOSE + " TEXT, " +
                     VisitorEntry.COLUMN_PHONE + " TEXT, " +
-                    VisitorEntry.COLUMN_SIGN_IN + " datetime default CURRENT_TIMESTAMP, " +
+                    VisitorEntry.COLUMN_SIGN_IN + " datetime, " +
                     VisitorEntry.COLUMN_SIGN_OUT + " datetime, " +
                     VisitorEntry.COLUMN_STATUS + " INTEGER default " + CHECKOUT +
                     ")";

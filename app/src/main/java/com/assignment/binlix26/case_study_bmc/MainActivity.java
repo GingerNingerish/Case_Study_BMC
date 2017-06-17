@@ -9,8 +9,8 @@ import com.assignment.binlix26.case_study_bmc.home.AdminSignInFragment;
 import com.assignment.binlix26.case_study_bmc.home.VisitorSigningFragment;
 
 public class MainActivity extends AppCompatActivity {
-    // TODO: 16/06/17 alert box for non existing visitor when they search thier phone
-    // TODO: 16/06/17 drop down for purpose
+
+    // TODO: 17/06/17 Spinner Staff and Visitor
     // TODO: 16/06/17 filter for sign in and sign out visitors
     // TODO: 16/06/17  upload photo camera
 

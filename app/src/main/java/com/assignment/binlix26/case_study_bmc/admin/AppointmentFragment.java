@@ -80,6 +80,7 @@ public class AppointmentFragment extends Fragment implements LoaderManager.Loade
                 String staffPhone = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_PHONE));
 
                 Intent appDetail = new Intent(getActivity(), EditAppointmentActivity.class);
+                appDetail.putExtra("exist", true);
                 appDetail.putExtra("appointment", app);
                 appDetail.putExtra("visitorPhone", visitorPhone);
                 appDetail.putExtra("visitor", visitorName);

@@ -5,90 +5,116 @@
     android:layout_height="match_parent"
     tools:context="com.assignment.binlix26.case_study_bmc.admin.EditAppointmentActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2"
-        android:layout_marginTop="40dp"
-        android:paddingLeft="10dp"
-        android:gravity="center"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:id="@+id/relativeLayout2"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
-        <EditText
-            android:id="@+id/edit_app_staff_name"
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="Select Staff"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/textView5" />
 
         <TextView
-            android:id="@+id/edit_app_staff_phone"
+            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:textAlignment="center"
-            android:text="TextView" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:paddingLeft="10dp"
-        android:gravity="center"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_alignParentStart="true">
-
-        <EditText
-            android:id="@+id/edit_app_visitor_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:layout_marginRight="10dp"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="Select Visitor"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/textView4"
+            android:layout_alignStart="@+id/textView3" />
 
         <TextView
-            android:id="@+id/edit_app_visitor_phone"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:textAlignment="center"
-            android:text="TextView" />
-    </LinearLayout>
+            android:text="Description"
+            android:textSize="20sp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/edit_app_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        <Spinner
+            android:id="@+id/edit_app_sp_staff"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView5"
+            android:layout_toEndOf="@+id/textView5"
+            android:layout_marginStart="30dp" />
 
-    <EditText
-        android:id="@+id/edit_app_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:layout_below="@+id/edit_app_desc"
-        android:layout_alignStart="@+id/edit_app_desc"
-        android:layout_marginTop="35dp" />
+        <Spinner
+            android:id="@+id/edit_app_sp_visitor"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_alignStart="@+id/edit_app_sp_staff" />
+
+        <Spinner
+            android:id="@+id/edit_app_sp_desc"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_alignStart="@+id/edit_app_sp_visitor" />
+
+        <TextView
+            android:id="@+id/edit_app_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/edit_app_bt_date"
+            android:layout_alignBottom="@+id/edit_app_bt_date"
+            android:layout_alignStart="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/edit_app_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/edit_app_bt_time"
+            android:layout_alignBottom="@+id/edit_app_bt_time"
+            android:layout_alignStart="@+id/edit_app_date" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Date"
+            android:layout_below="@+id/edit_app_sp_desc"
+            android:layout_alignEnd="@+id/edit_app_sp_desc"
+            android:layout_marginTop="50dp"
+            android:id="@+id/edit_app_bt_date" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Time"
+            android:layout_marginTop="50dp"
+            android:id="@+id/edit_app_bt_time"
+            android:layout_below="@+id/edit_app_bt_date"
+            android:layout_alignEnd="@+id/edit_app_bt_date" />
+
+    </RelativeLayout>
+
 
     <Button
         android:id="@+id/edit_app_bt_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_app_time"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="76dp"
         android:text="Update" />
+
+
 </RelativeLayout>
