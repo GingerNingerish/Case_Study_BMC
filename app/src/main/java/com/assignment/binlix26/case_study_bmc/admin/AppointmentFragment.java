@@ -18,6 +18,7 @@ import android.widget.ListView;
 import com.assignment.binlix26.case_study_bmc.R;
 import com.assignment.binlix26.case_study_bmc.data.BMCContract.*;
 import com.assignment.binlix26.case_study_bmc.model.Appointment;
+import com.assignment.binlix26.case_study_bmc.model.Staff;
 import com.assignment.binlix26.case_study_bmc.model.Visitor;
 
 public class AppointmentFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -68,32 +69,33 @@ public class AppointmentFragment extends Fragment implements LoaderManager.Loade
                 // get data from this cursor
                 int appID = cursor.getInt(cursor.getColumnIndex(AppointmentEntry._ID));
                 String appTime = cursor.getString(cursor.getColumnIndex(AppointmentEntry.COLUMN_DATETIME));
-//                String appCreated = cursor.getString(cursor.getColumnIndex(AppointmentEntry.COLUMN_DATE_CREATED));
                 String appDesc = cursor.getString(cursor.getColumnIndex(AppointmentEntry.COLUMN_DESCRIPTION));
 
                 Appointment app = new Appointment(appID, appDesc, appTime);
 
+                int visitorID = cursor.getInt(cursor.getColumnIndex(AppointmentEntry.COLUMN_VISITOR));
                 String visitorName = cursor.getString(cursor.getColumnIndex(VisitorEntry.COLUMN_NAME));
-                String visitorPhone = cursor.getString(cursor.getColumnIndex(VisitorEntry.COLUMN_PHONE));
+                String visitorBusiness = cursor.getString(cursor.getColumnIndex(VisitorEntry.COLUMN_BUSINESS_NAME));
+                Visitor visitor = new Visitor(visitorID, visitorName, visitorBusiness);
 
+                int staffID = cursor.getInt(cursor.getColumnIndex(AppointmentEntry.COLUMN_STAFF));
                 String staffName = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_NAME));
-                String staffPhone = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_PHONE));
+                String staffTittle = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_TITLE));
+                Staff staff = new Staff(staffID, staffName, staffTittle);
 
                 Intent appDetail = new Intent(getActivity(), EditAppointmentActivity.class);
                 appDetail.putExtra("exist", true);
                 appDetail.putExtra("appointment", app);
-                appDetail.putExtra("visitorPhone", visitorPhone);
-                appDetail.putExtra("visitor", visitorName);
-                appDetail.putExtra("staffPhone", staffPhone);
-                appDetail.putExtra("staff", staffName);
+                appDetail.putExtra("visitor", visitor);
+                appDetail.putExtra("staff", staff);
+
                 startActivity(appDetail);
 
 
                /*
-                String visitorBusiness = cursor.getString(cursor.getColumnIndex(VisitorEntry.COLUMN_BUSINESS_NAME));
-                int visitorID = cursor.getInt(cursor.getColumnIndex(AppointmentEntry.COLUMN_VISITOR));
-                int staffID = cursor.getInt(cursor.getColumnIndex(AppointmentEntry.COLUMN_STAFF));
-                String staffTittle = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_TITLE));
+               String staffName = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_NAME));
+                String staffPhone = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_PHONE));
+                String visitorPhone = cursor.getString(cursor.getColumnIndex(VisitorEntry.COLUMN_PHONE));
                 String staffDepartment = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_DEPARTMENT));*/
             }
         });

@@ -18,6 +18,12 @@ public class Staff implements Serializable {
     public Staff() {
     }
 
+    public Staff(int id, String name, String title) {
+        this.id = id;
+        this.name = name;
+        this.title = title;
+    }
+
     public Staff(int id, String name, String title, String department, String phone, String photo) {
         this.id = id;
         this.name = name;

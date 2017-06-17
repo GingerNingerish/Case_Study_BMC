@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.assignment.binlix26.case_study_bmc.admin.EditAppointmentActivity;
 import com.assignment.binlix26.case_study_bmc.admin.EditStaffActivity;
 import com.assignment.binlix26.case_study_bmc.admin.EditVisitorActivity;
 
@@ -66,8 +67,14 @@ public class AdminActivity extends AppCompatActivity {
                 return true;
             case R.id.new_app:
                 // go to edit appointment
-
+                Intent addApp = new Intent(this, EditAppointmentActivity.class);
+                addApp.putExtra("exist", false);
+                startActivity(addApp);
                 return true;
+
+            case R.id.log_out:
+                Intent homePage = new Intent(this, MainActivity.class);
+                startActivity(homePage);
             default:
                 return super.onOptionsItemSelected(item);
         }

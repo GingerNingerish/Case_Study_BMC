@@ -17,6 +17,16 @@ public class Visitor implements Serializable {
     private String signIn;
     private String signOut;
 
+    public Visitor() {
+
+    }
+
+    public Visitor(int id, String name, String business) {
+        this.id = id;
+        this.name = name;
+        this.business = business;
+    }
+
     public Visitor(int id, String name, String business, String phone, String purpose, int status) {
         this.id = id;
         this.name = name;
@@ -24,11 +34,6 @@ public class Visitor implements Serializable {
         this.phone = phone;
         this.purpose = purpose;
         this.status = status;
-    }
-
-
-    public Visitor() {
-
     }
 
     public void setPhone(String phone) {

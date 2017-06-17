@@ -99,6 +99,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(VisitorEntry.COLUMN_BUSINESS_NAME, "Wintec");
         values.put(VisitorEntry.COLUMN_PHONE, "0210");
 //        values.put(VisitorEntry.COLUMN_DATE_CREATED, dateFormat.format(calendar.getTime()));
+        values.put(VisitorEntry.COLUMN_SIGN_IN, dateFormat.format(calendar.getTime()));
         values.put(VisitorEntry.COLUMN_PURPOSE, "General Business");
         values.put(VisitorEntry.COLUMN_STATUS, 1);
         db.insert(VisitorEntry.TABLE_NAME, null, values);
@@ -108,6 +109,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(VisitorEntry.COLUMN_BUSINESS_NAME, "New Save");
         values.put(VisitorEntry.COLUMN_PHONE, "0202");
 //        values.put(VisitorEntry.COLUMN_DATE_CREATED, dateFormat.format(calendar.getTime()));
+        values.put(VisitorEntry.COLUMN_SIGN_IN, dateFormat.format(calendar.getTime()));
         values.put(VisitorEntry.COLUMN_PURPOSE, "Scheduled Appointment");
         values.put(VisitorEntry.COLUMN_STATUS, 1);
         db.insert(VisitorEntry.TABLE_NAME, null, values);
@@ -118,6 +120,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(VisitorEntry.COLUMN_PHONE, "0239");
         values.put(VisitorEntry.COLUMN_PURPOSE, "Drop In");
         values.put(VisitorEntry.COLUMN_SIGN_OUT, dateFormat.format(calendar.getTime()));
+        values.put(VisitorEntry.COLUMN_SIGN_IN, dateFormat.format(calendar.getTime()));
         values.put(VisitorEntry.COLUMN_STATUS, 0);
         db.insert(VisitorEntry.TABLE_NAME, null, values);
         values.clear();
