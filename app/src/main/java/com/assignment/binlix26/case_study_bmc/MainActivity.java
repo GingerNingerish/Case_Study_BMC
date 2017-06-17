@@ -10,7 +10,6 @@ import com.assignment.binlix26.case_study_bmc.home.VisitorSigningFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO: 17/06/17 Problem: Automatic log out when admin help visitor check in or check out
     // TODO: 16/06/17 filter for sign in and sign out visitors
     // TODO: 16/06/17  upload photo camera
 

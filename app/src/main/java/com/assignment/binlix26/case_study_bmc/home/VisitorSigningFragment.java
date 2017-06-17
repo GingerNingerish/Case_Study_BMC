@@ -111,6 +111,7 @@ public class VisitorSigningFragment extends Fragment implements LoaderManager.Lo
 
             intent.putExtra("visitor", visitor);
             intent.putExtra("exist", true);
+            intent.putExtra("fromVisitor", true);
 
             data.close();
 
@@ -128,8 +129,10 @@ public class VisitorSigningFragment extends Fragment implements LoaderManager.Lo
                             visitor.setPhone(inputMobile);
 
                             Intent intent = new Intent(getActivity(), VisitorCheckInActivity.class);
+
                             intent.putExtra("visitor", visitor);
                             intent.putExtra("exist", false);
+                            intent.putExtra("fromVisitor", true);
 
                             startActivity(intent);
                         }

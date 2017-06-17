@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.assignment.binlix26.case_study_bmc.AdminActivity;
 import com.assignment.binlix26.case_study_bmc.MainActivity;
 import com.assignment.binlix26.case_study_bmc.R;
 import com.assignment.binlix26.case_study_bmc.data.BMCContract;
@@ -29,8 +30,9 @@ public class VisitorCheckInActivity extends AppCompatActivity {
     private EditText etBusiness;
     private EditText etPhone;
     private Button btSign;
-
     private Spinner spPurpose;
+
+    private boolean fromVisitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class VisitorCheckInActivity extends AppCompatActivity {
 
         final Visitor visitor = (Visitor) getIntent().getExtras().getSerializable("visitor");
         boolean exist = getIntent().getExtras().getBoolean("exist");
+        fromVisitor = getIntent().getExtras().getBoolean("fromVisitor");
 
         Integer checkStatus = visitor.getStatus();
 
@@ -156,7 +159,12 @@ public class VisitorCheckInActivity extends AppCompatActivity {
 
                         getContentResolver().update(VisitorEntry.CONTENT_URI, values, selection, arguments);
 
-                        Intent homePage = new Intent(VisitorCheckInActivity.this, MainActivity.class);
+                        Intent homePage;
+
+                        if (fromVisitor)
+                            homePage = new Intent(VisitorCheckInActivity.this, MainActivity.class);
+                        else
+                            homePage = new Intent(VisitorCheckInActivity.this, AdminActivity.class);
                         startActivity(homePage);
                     }
                 })
@@ -178,7 +186,12 @@ public class VisitorCheckInActivity extends AppCompatActivity {
 
         getContentResolver().update(VisitorEntry.CONTENT_URI, values, selection, arguments);
 
-        Intent homePage = new Intent(VisitorCheckInActivity.this, MainActivity.class);
+        Intent homePage;
+
+        if (fromVisitor)
+            homePage = new Intent(VisitorCheckInActivity.this, MainActivity.class);
+        else
+            homePage = new Intent(VisitorCheckInActivity.this, AdminActivity.class);
         startActivity(homePage);
     }
 }

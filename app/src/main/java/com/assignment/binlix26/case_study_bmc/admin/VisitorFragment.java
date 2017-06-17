@@ -79,6 +79,7 @@ public class VisitorFragment extends Fragment implements LoaderManager.LoaderCal
 
                 selectedVisitor.putExtra("visitor", visitor);
                 selectedVisitor.putExtra("exist", true);
+                selectedVisitor.putExtra("fromVisitor", false); // help to fix automatic log out when admin checks visitor in and out
                 startActivity(selectedVisitor);
             }
         });
