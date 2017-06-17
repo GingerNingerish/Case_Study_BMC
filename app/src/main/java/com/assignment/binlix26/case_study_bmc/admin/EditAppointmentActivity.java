@@ -12,17 +12,21 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.assignment.binlix26.case_study_bmc.AdminActivity;
+import com.assignment.binlix26.case_study_bmc.MainActivity;
 import com.assignment.binlix26.case_study_bmc.R;
 import com.assignment.binlix26.case_study_bmc.data.BMCContract;
 import com.assignment.binlix26.case_study_bmc.data.BMCContract.*;
 import com.assignment.binlix26.case_study_bmc.model.Appointment;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.assignment.binlix26.case_study_bmc.utility.Utility.purposeList;
 
-public class EditAppointmentActivity extends AppCompatActivity {
+public class EditAppointmentActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
 
     private TextView tvDate;
@@ -53,6 +57,37 @@ public class EditAppointmentActivity extends AppCompatActivity {
         Button btUpdate = (Button) findViewById(R.id.edit_app_bt_update);
         Button btPickDate = (Button) findViewById(R.id.edit_app_bt_date);
         Button btPickTime = (Button) findViewById(R.id.edit_app_bt_time);
+
+        //set up date and time picker
+        btPickDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar now = Calendar.getInstance();
+                DatePickerDialog dpd = DatePickerDialog.newInstance(
+                        EditAppointmentActivity.this,
+                        now.get(Calendar.YEAR),
+                        now.get(Calendar.MONTH),
+                        now.get(Calendar.DAY_OF_MONTH)
+                );
+                dpd.setTitle("Date Picker Dialog");
+                dpd.show(getFragmentManager(), "DatePicker");
+            }
+        });
+
+        btPickTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar now = Calendar.getInstance();
+                TimePickerDialog tpd = TimePickerDialog.newInstance(
+                        EditAppointmentActivity.this,
+                        now.get(Calendar.HOUR_OF_DAY),
+                        now.get(Calendar.MINUTE),
+                        true // true =  24 hour enable, false = 12 hour enable
+                );
+                tpd.setTitle("Time Picker Dialog");
+                tpd.show(getFragmentManager(), "TimePicker");
+            }
+        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(EditAppointmentActivity.this,
                 android.R.layout.simple_spinner_item, purposeList);
@@ -92,6 +127,7 @@ public class EditAppointmentActivity extends AppCompatActivity {
             });
 
         } else {
+            btUpdate.setText("Add");
             insertApp();
         }
     }
@@ -116,5 +152,17 @@ public class EditAppointmentActivity extends AppCompatActivity {
 
         Intent admin = new Intent(this, AdminActivity.class);
         startActivity(admin);
+    }
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        String date = year + "-" + monthOfYear + "-" + dayOfMonth;
+        tvDate.setText(date);
+    }
+
+    @Override
+    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
+        String time = hourOfDay + ":" + minute + ":" + second;
+        tvTime.setText(time);
     }
 }
