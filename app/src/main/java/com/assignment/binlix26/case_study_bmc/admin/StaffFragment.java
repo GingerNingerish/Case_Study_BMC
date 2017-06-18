@@ -69,7 +69,7 @@ public class StaffFragment extends Fragment implements LoaderManager.LoaderCallb
                 String staffPhone = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_PHONE));
                 String staffTittle = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_TITLE));
                 String staffDepartment = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_DEPARTMENT));
-                String staffPhoto = cursor.getString(cursor.getColumnIndex(StaffEntry.COLUMN_PHOTO));
+                byte[] staffPhoto = cursor.getBlob(cursor.getColumnIndex(StaffEntry.COLUMN_PHOTO));
 
                 Staff staff = new Staff(staffId, staffName,
                         staffTittle, staffDepartment, staffPhone, staffPhoto);

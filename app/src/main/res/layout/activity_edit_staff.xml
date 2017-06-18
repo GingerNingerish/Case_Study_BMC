@@ -24,7 +24,8 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingRight="20dp"
+        android:id="@+id/linearLayout">
 
         <EditText
             android:id="@+id/edit_staff_name"
@@ -71,5 +72,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="43dp"
         android:text="Update" />
+
+    <Button
+        android:id="@+id/bt_take_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_marginStart="50dp"
+        android:layout_toEndOf="@+id/edit_staff_photo"
+        android:text="photo" />
 
 </RelativeLayout>

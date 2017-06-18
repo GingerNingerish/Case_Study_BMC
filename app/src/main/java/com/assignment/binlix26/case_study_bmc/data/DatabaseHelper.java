@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import com.assignment.binlix26.case_study_bmc.R;
@@ -46,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     StaffEntry.COLUMN_TITLE + " TEXT, " +
                     StaffEntry.COLUMN_DEPARTMENT + " TEXT, " +
                     StaffEntry.COLUMN_PHONE + " TEXT, " +
-                    StaffEntry.COLUMN_PHOTO + " TEXT, " +
+                    StaffEntry.COLUMN_PHOTO + " BLOB, " +
                     StaffEntry.COLUMN_DATE_CREATED + " datetime default CURRENT_TIMESTAMP" +
                     ")";
 
@@ -131,7 +133,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(StaffEntry.COLUMN_DEPARTMENT, "ITB");
         values.put(StaffEntry.COLUMN_PHONE, "0249238559");
         values.put(StaffEntry.COLUMN_DATE_CREATED, dateFormat.format(calendar.getTime()));
-        values.put(StaffEntry.COLUMN_PHOTO, R.drawable.staff);
 
         db.insert(StaffEntry.TABLE_NAME, null, values);
         values.clear();
@@ -141,7 +142,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(StaffEntry.COLUMN_DEPARTMENT, "ITB");
         values.put(StaffEntry.COLUMN_PHONE, "1293985");
         values.put(StaffEntry.COLUMN_DATE_CREATED, dateFormat.format(calendar.getTime()));
-        values.put(StaffEntry.COLUMN_PHOTO, R.drawable.staff);
 
         db.insert(StaffEntry.TABLE_NAME, null, values);
         values.clear();
@@ -150,7 +150,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(StaffEntry.COLUMN_TITLE, "Coordinator");
         values.put(StaffEntry.COLUMN_DEPARTMENT, "ITB");
         values.put(StaffEntry.COLUMN_PHONE, "0259128352");
-        values.put(StaffEntry.COLUMN_PHOTO, R.drawable.staff);
 
         db.insert(StaffEntry.TABLE_NAME, null, values);
         values.clear();

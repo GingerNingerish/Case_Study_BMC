@@ -13,7 +13,7 @@ public class Staff implements Serializable {
     private String title;
     private String department;
     private String phone;
-    private String photo;
+    private byte[] photo;
 
     public Staff() {
     }
@@ -24,7 +24,7 @@ public class Staff implements Serializable {
         this.title = title;
     }
 
-    public Staff(int id, String name, String title, String department, String phone, String photo) {
+    public Staff(int id, String name, String title, String department, String phone, byte[] photo) {
         this.id = id;
         this.name = name;
         this.title = title;
@@ -53,7 +53,7 @@ public class Staff implements Serializable {
         return phone;
     }
 
-    public String getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 }

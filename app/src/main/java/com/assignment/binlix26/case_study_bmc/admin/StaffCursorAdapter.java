@@ -2,6 +2,7 @@ package com.assignment.binlix26.case_study_bmc.admin;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.assignment.binlix26.case_study_bmc.R;
 import com.assignment.binlix26.case_study_bmc.data.BMCContract.StaffEntry;
+import com.assignment.binlix26.case_study_bmc.utility.Utility;
 
 /**
  * Created by binlix26 on 13/06/17.
@@ -42,13 +44,18 @@ public class StaffCursorAdapter extends CursorAdapter {
         int title = cursor.getColumnIndexOrThrow(StaffEntry.COLUMN_TITLE);
         int department = cursor.getColumnIndexOrThrow(StaffEntry.COLUMN_DEPARTMENT);
 
-        String _phtoto = cursor.getString(photo);
+        byte[] _photo = cursor.getBlob(photo);
         String _staff = cursor.getString(staff);
         String _title = cursor.getString(title);
         String _department = cursor.getString(department);
 
+        // set up default staff avatar
+        if (_photo ==null || _photo.length < 1) {
+            _photo = Utility.getImageBytes(Utility.bitmap);
+        }
+
         // Populate fields with extracted properties
-        ivPhoto.setImageResource(Integer.parseInt(_phtoto));
+        ivPhoto.setImageBitmap(Utility.toBitmapImage(_photo));
 
 //        Picasso.with(context)
 //                .load(new File(_phtoto))
