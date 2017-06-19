@@ -14,3 +14,8 @@ It is designed for helping the staffs at reception keep on track with every visi
   <li>ContentResolver</li>
   <li>SQLite DB</li>
 </ul>
+
+<p>-----------</p>
+![Home Page](https://raw.githubusercontent.com/binlix26/Case_Study_BMC/master/home.png)
+<p>-----------</p>
+![Admin Page](https://raw.githubusercontent.com/binlix26/Case_Study_BMC/master/admin.png)
