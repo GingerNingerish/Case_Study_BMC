@@ -81,4 +81,10 @@ public class AdminActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent homePage = new Intent(this, MainActivity.class);
+        startActivity(homePage);
+    }
+
 }

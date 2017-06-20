@@ -2,18 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6eafde"
-    android:orientation="vertical"
+    android:background="#9BC4E2"
     android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/visitorNumberInput"
-        android:layout_width="280dp"
+        android:layout_width="470dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:inputType="phone"
@@ -29,24 +29,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="63dp"
         android:fontFamily="sans-serif-smallcaps"
         android:padding="10sp"
         android:text="Sign In/ Sign Out "
         android:textColor="#ffffff"
-        android:textSize="24sp" />
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/visitorNumberSearchButton"
-        android:layout_width="290dp"
-        android:layout_height="58dp"
         android:layout_below="@+id/visitorNumberInput"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:background="#1C75BC"
-        android:fontFamily="sans-serif-smallcaps"
+        android:layout_marginTop="56dp"
         android:text="Search"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        android:textSize="24sp" />
+        style="@style/ButtonDesign"
+
+
+
+
+
+
+
+         />
 </RelativeLayout>

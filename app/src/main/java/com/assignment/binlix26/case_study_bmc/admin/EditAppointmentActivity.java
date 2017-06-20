@@ -71,6 +71,7 @@ public class EditAppointmentActivity extends AppCompatActivity implements Loader
         Button btUpdate = (Button) findViewById(R.id.edit_app_bt_update);
         Button btPickDate = (Button) findViewById(R.id.edit_app_bt_date);
         Button btPickTime = (Button) findViewById(R.id.edit_app_bt_time);
+        Button backButton = (Button) findViewById(R.id.backButton);
 
         //set up date and time picker
         btPickDate.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +103,18 @@ public class EditAppointmentActivity extends AppCompatActivity implements Loader
                 tpd.show(getFragmentManager(), "TimePicker");
             }
         });
+
+        //Button to return to Administration
+        backButton.setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                       backToAdminActivity();
+                    }
+                }
+        );
+
+
+
 
         // set up spinner description
         ArrayAdapter<String> adapterDesc = new ArrayAdapter<>(EditAppointmentActivity.this,
@@ -316,6 +329,11 @@ public class EditAppointmentActivity extends AppCompatActivity implements Loader
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         // do nothing
+    }
+
+    public void backToAdminActivity() {
+        Intent i = new Intent (this, AdminActivity.class);
+        startActivity(i);
     }
 
 }

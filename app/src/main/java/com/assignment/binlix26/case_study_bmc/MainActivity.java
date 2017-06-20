@@ -13,7 +13,6 @@ import com.assignment.binlix26.case_study_bmc.utility.Utility;
 public class MainActivity extends AppCompatActivity {
 
     // TODO: 16/06/17 splash screen
-    // TODO: 18/06/17 application icon
 
     private ViewPager mViewPager;
 

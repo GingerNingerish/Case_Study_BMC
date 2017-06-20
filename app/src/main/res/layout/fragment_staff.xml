@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9BC4E2"
     tools:context="com.assignment.binlix26.case_study_bmc.admin.StaffFragment">
 
     <LinearLayout
@@ -12,8 +13,7 @@
         <ImageView
             android:id="@+id/staff_photo"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            />
+            android:layout_height="100dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,29 +25,32 @@
                 android:id="@+id/staff_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BIN"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="BIN"
                 android:textAppearance="?attr/textAppearanceListItem"
-                android:gravity="center_vertical"/>
+                android:textColor="#ffffff" />
 
             <TextView
                 android:id="@+id/staff_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BOSS"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="BOSS"
                 android:textAppearance="?attr/textAppearanceListItem"
-                android:gravity="center_vertical"/>
+                android:textColor="#ffffff" />
 
 
             <TextView
                 android:id="@+id/staff_department"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="APPLE"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="APPLE"
                 android:textAppearance="?attr/textAppearanceListItem"
-                android:gravity="center_vertical"/>
+                android:textColor="#ffffff" />
 
         </LinearLayout>
 

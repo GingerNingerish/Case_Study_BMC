@@ -23,11 +23,8 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="68dp"
-            android:background="#1C75BC"
-            app:tabIndicatorColor="#cce6ff"
-            app:tabMinWidth="200dp" />
+            style="@style/MyCustomTabLayout"
+             />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -35,7 +32,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6eafde"
+        android:background="#9BC4E2"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>

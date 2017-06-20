@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9BC4E2"
     tools:context="com.assignment.binlix26.case_study_bmc.admin.VisitorFragment">
 
     <LinearLayout
@@ -14,28 +15,31 @@
             android:id="@+id/checkin_visitor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Lucy Perl"
             android:layout_weight="1"
+            android:gravity="center"
+            android:text="Lucy Perl"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:gravity="center"/>
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/checkin_purpose"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Drop In"
             android:layout_weight="1"
+            android:gravity="center"
+            android:text="Drop In"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:gravity="center"/>
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/checkin_time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="2017-06-06 14:00"
             android:layout_weight="1"
+            android:gravity="center"
+            android:text="2017-06-06 14:00"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:gravity="center"/>
+            android:textColor="#ffffff" />
 
 
     </LinearLayout>

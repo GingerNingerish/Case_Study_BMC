@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#4E78A0"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -31,17 +31,14 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/sliding_tabs"
             style="@style/MyCustomTabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabMode="fixed" />
+            />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
+            android:layout_weight="0.98"
+            android:background="#9BC4E2" />
 
     </LinearLayout>
 

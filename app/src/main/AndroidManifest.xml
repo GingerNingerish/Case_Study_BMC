@@ -36,7 +36,8 @@
 
         <activity android:name=".home.VisitorCheckInActivity" />
         <activity android:name=".admin.EditStaffActivity" />
-        <activity android:name=".admin.EditAppointmentActivity" />
+        <activity android:name=".admin.EditAppointmentActivity"
+            android:label="Appointment Administration"/>
         <activity android:name=".admin.EditVisitorActivity"></activity>
     </application>
 

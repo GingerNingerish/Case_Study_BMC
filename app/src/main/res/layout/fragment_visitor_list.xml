@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9BC4E2"
     android:orientation="vertical"
     android:paddingTop="20dp">
 
@@ -15,10 +16,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select Category Here"
-            android:textSize="18sp"
             android:layout_weight="1"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="Select Category Here"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/checkin_list_filter"
@@ -42,6 +44,7 @@
             android:gravity="center"
             android:text="Visitor"
             android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -52,6 +55,7 @@
             android:gravity="center"
             android:text="Purpose"
             android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -62,6 +66,7 @@
             android:gravity="center"
             android:text="Sign In"
             android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:textStyle="bold" />
 

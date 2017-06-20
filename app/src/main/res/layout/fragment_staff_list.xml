@@ -7,5 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
+    android:background="#9BC4E2"
     tools:context="com.assignment.binlix26.case_study_bmc.admin.StaffFragment"
     tools:listitem="@layout/fragment_staff" />
